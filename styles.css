@@ -1,0 +1,92 @@
+/* Apply background image to the body */
+body {
+    background-image: url("assets/KC250330-0517-3.jpg"); /* Path to your background image */
+    background-size: cover; /* Makes the background image cover the entire screen */
+    background-position: center center; /* Centers the background image */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+    margin: 0; /* Removes default margin */
+    height: 100vh; /* Makes sure the background fills the entire viewport */
+    display: flex; /* Use flexbox to center the content */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    color: white; /* Text color */
+    font-family: Arial, sans-serif; /* Font family for the body */
+    background-position: center 20%;
+    display: block;
+    margin-left: 30px; /* Add space from the left edge */
+  }  
+  /* Styling for the main heading */
+  h1 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow for better contrast */
+    margin-left: 300px; /* Distance from the right */
+  }
+  .nav-container {
+    display: flex;
+    justify-content: center; /* Centers only the nav links */
+    gap: 15px; /* Adds spacing between links */
+    position: absolute;
+    top: 40px;   /* Distance from the top */
+    right: 40px; /* Distance from the right */
+    text-decoration: none;
+    color: white; /* or any color you like */  
+}
+.nav-container a {
+    text-decoration: none; /* Removes underline */
+    color: white; /* Makes the text white */
+}
+.nav-container a:hover {
+    opacity: 0.8; /* Slight fade effect on hover */
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tagline {
+    color: white; /* Example style */
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px; /* Distance from the right */
+    position: relative; /* Enable positioning */
+    top: 300px;
+}
+.logo-image {
+        position: absolute;  /* Sticks to the screen even when scrolling */
+        top: 20px;        /* Distance from the top */
+        left: 0px;       /* Distance from the left */
+        width: 300px;     /* Adjust size as needed */
+        height: auto;
+        margin-bottom: 20px; 
+}
+.title-group {
+    display: fixed;            /* Places the image and text side by side */
+    align-items: center;      /* Aligns them vertically */
+    margin-left: 20px;        /* Moves the group away from the left edge */
+}
+.arrangement-title {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px; /* Adds space between the text and the PDF */
+}
+/* Styling for the content box */
+/* Content Box (Bottom Half of Screen) */
+.content-box {
+    position: absolute; /* Fixed position relative to the viewport */
+    bottom: 0; /* Aligns it at the bottom */
+    left: 0; /* Ensures it spans the entire width */
+    width: 100%; /* Full width */
+    height: 15vh; /* 30% of the viewport height */
+    background-color: #000000; /* Solid black background */
+    color: white; /* Text color */
+    display: flex; /* Use flexbox for centering content */
+    flex-direction: column; /* Stack text and PDF vertically */
+    justify-content: flex-start; /* Align children to the top */
+    align-items: center; /* Center horizontally */
+    padding: 20px; /* Padding around the content */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+
