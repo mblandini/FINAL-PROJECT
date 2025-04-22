@@ -1,141 +1,232 @@
+/* Changed to relative values, removed redundant properties, set custom wide screen */
+
 /* Apply background image to the body */
 body {
-    background-image: url("assets/KC250330-0517-3.jpg"); /* Path to your background image */
-    background-size: cover; /* Makes the background image cover the entire screen */
-    background-position: center center; /* Centers the background image */
-    background-attachment: fixed; /* Keeps the background fixed when scrolling */
-    margin: 0; /* Removes default margin */
-    height: 100vh; /* Makes sure the background fills the entire viewport */
-    display: flex; /* Use flexbox to center the content */
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    color: white; /* Text color */
-    font-family: Arial, sans-serif; /* Font family for the body */
-    background-position: center 20%;
-    display: block;
-    margin-left: 30px; /* Add space from the left edge */
-  }  
-  /* Styling for the main heading */
-  h1 {
-        text-align: center;
-        font-weight: bold;
-        position: relative;
-        top: 0px;
-        font-size: 40px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  .nav-container {
-    display: flex;
-    justify-content: center; /* Centers only the nav links */
-    gap: 15px; /* Adds spacing between links */
-    position: absolute;
-    top: 40px;   /* Distance from the top */
-    right: 40px; /* Distance from the right */
-    text-decoration: none;
-    color: white; /* or any color you like */  
-}
-.nav-container a {
-    text-decoration: none; /* Removes underline */
-    color: white; /* Makes the text white */
-}
-.nav-container a:hover {
-    opacity: 0.8; /* Slight fade effect on hover */
-}
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.tagline {
-    color: white; /* Example style */
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: 20px; /* Distance from the right */
-    position: relative; /* Enable positioning */
-    top: 300px;
-}
-.logo-image {
-        position: absolute;  /* Sticks to the screen even when scrolling */
-        top: 20px;        /* Distance from the top */
-        left: 0px;       /* Distance from the left */
-        width: 300px;     /* Adjust size as needed */
-        height: auto;
-        margin-bottom: 20px; 
-}
-.title-group {
-    display: fixed;            /* Places the image and text side by side */
-    align-items: center;      /* Aligns them vertically */
-    margin-left: 20px;        /* Moves the group away from the left edge */
-}
-.arrangement-title {
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 20px; /* Adds space between the text and the PDF */
-}
-/* Styling for the content box */
-/* Content Box (Bottom Half of Screen) */
-.content-box {
-    position: absolute; /* Fixed position relative to the viewport */
-    bottom: 0; /* Aligns it at the bottom */
-    left: 0; /* Ensures it spans the entire width */
-    width: 100%; /* Full width */
-    height: 15vh; /* 30% of the viewport height */
-    background-color: #000000; /* Solid black background */
-    color: white; /* Text color */
-    display: flex; /* Use flexbox for centering content */
-    flex-direction: column; /* Stack text and PDF vertically */
-    justify-content: flex-start; /* Align children to the top */
-    align-items: center; /* Center horizontally */
-    padding: 20px; /* Padding around the content */
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-}
-.half-page-image {
-    height: 50vh;  /* half the viewport height */
-    overflow: hidden;
-  }
-.half-page-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* makes the image fill the space without stretching */
-  } 
-.full-width-section {
-    width: 100vw;    /* 100% of the viewport width */
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-.half-page-box {
-    width: 100vw;
-    height: 50vh;
-    background-color: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-.fab {
-    color: white;            /* Makes the icon white */
-    font-size: 40px;         /* Makes the icon big */
-    margin: 0 15px;          /* Adds space around icons */
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-.fab:hover {
-    transform: scale(1.2);   /* Zoom effect on hover */
-    color: #ff4081;          /* Optional: color change on hover */
-  }
-  #backButton {
-    padding: 15px 30px; /* Increases the size of the button */
-    font-size: 18px; /* Adjusts the text size */
-    border-radius: 30px; /* Rounds the edges of the button */
-    background-color: #000000; /* Adds a blue background */
-    color: white; /* White text color */
-    border: none; /* Removes the default border */
-    cursor: pointer; /* Changes the cursor to indicate it's clickable */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-#backButton:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+  background-image: url("assets/KC250330-0517-3.jpg");
+  background-size: auto 100%; /* Height is 100% of container, width auto-scales */
+  background-repeat: no-repeat;
+  background-position: center top; 
+  background-attachment: fixed;
+  margin: 0;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding-left: 3%;
+  box-sizing: border-box;
+  background-color: #000; /* Background color to fill any gaps */
+}  
+
+/* Styling for the main heading */
+h1 {
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
 }
 
+.nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+  position: absolute;
+  top: 5vh;
+  right: 5%;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-container a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.nav-container a:hover {
+  opacity: 0.8;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tagline {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-left: 5%;
+  position: relative;
+  top: 30vh;
+}
+
+.logo-image {
+  position: absolute;
+  top: 2vh;
+  left: 0;
+  width: 25%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 2vh;
+}
+
+.title-group {
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.arrangement-title {
+  text-align: center;
+  font-size: 1.125rem;
+  margin-bottom: 2vh;
+}
+
+/* Content Box (Bottom Half of Screen) */
+.content-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  background-color: #000000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2vh 3%;
+  box-sizing: border-box;
+}
+
+.half-page-image {
+  height: 50vh;
+  overflow: hidden;
+}
+
+.half-page-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 100%;
+}
+
+.full-width-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.half-page-box {
+  width: 100%;
+  height: 50vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fab {
+  color: white;
+  font-size: 2.5rem;
+  margin: 0 3%;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fab:hover {
+  transform: scale(1.2);
+  color: #ff4081;
+}
+
+#backButton {
+  padding: 1.5vh 5%;
+  font-size: 1.125rem;
+  border-radius: 30px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#backButton:hover {
+  background-color: #0056b3;
+}
+
+/* Handle ultra-wide screens specifically */
+@media (min-aspect-ratio: 16/9) {
+  body {
+      background-size: contain; /* Switch to contain for VERY wide screens */
+      background-position: center top; /* Keep top alignment */
+  }
+}
+
+/* EXTREMELY wide screens */
+@media (min-aspect-ratio: 21/9) {
+  body {
+      /* Force the image to maintain full height regardless of width */
+      background-size: auto 100vh;
+  }
+}
+
+/* Add media queries for different screen sizes */
+@media (max-width: 768px) {
+  body {
+      background-size: contain;
+  }
+  
+  .nav-container {
+      position: relative;
+      top: 0;
+      right: 0;
+      justify-content: flex-end;
+      padding: 10px;
+  }
+  
+  .logo-image {
+      width: 50%;
+      max-width: 200px;
+  }
+  
+  .tagline {
+      top: 20vh;
+      font-size: 1rem;
+  }
+  
+  h1 {
+      font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+  }
+  
+  .content-box {
+      height: 20vh;
+  }
+  
+  .fab {
+      font-size: 1.8rem;
+  }
+  
+  h1 {
+      font-size: 1.5rem;
+  }
+  
+  body {
+      padding-left: 5%;
+  }
+}
