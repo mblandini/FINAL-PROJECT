@@ -17,11 +17,12 @@ body {
   }  
   /* Styling for the main heading */
   h1 {
-    text-align: left;
-    font-weight: bold;
-    font-size: 40px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow for better contrast */
-    margin-left: 300px; /* Distance from the right */
+        text-align: center;
+        font-weight: bold;
+        position: relative;
+        top: 0px;
+        font-size: 40px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   .nav-container {
     display: flex;
@@ -88,5 +89,53 @@ ul {
     padding: 20px; /* Padding around the content */
     box-sizing: border-box; /* Includes padding and border in the element's total width and height */
 }
-
+.half-page-image {
+    height: 50vh;  /* half the viewport height */
+    overflow: hidden;
+  }
+.half-page-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* makes the image fill the space without stretching */
+  } 
+.full-width-section {
+    width: 100vw;    /* 100% of the viewport width */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+.half-page-box {
+    width: 100vw;
+    height: 50vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+.fab {
+    color: white;            /* Makes the icon white */
+    font-size: 40px;         /* Makes the icon big */
+    margin: 0 15px;          /* Adds space around icons */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+.fab:hover {
+    transform: scale(1.2);   /* Zoom effect on hover */
+    color: #ff4081;          /* Optional: color change on hover */
+  }
+  #backButton {
+    padding: 15px 30px; /* Increases the size of the button */
+    font-size: 18px; /* Adjusts the text size */
+    border-radius: 30px; /* Rounds the edges of the button */
+    background-color: #000000; /* Adds a blue background */
+    color: white; /* White text color */
+    border: none; /* Removes the default border */
+    cursor: pointer; /* Changes the cursor to indicate it's clickable */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+#backButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
 
