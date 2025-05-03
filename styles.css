@@ -6,7 +6,6 @@ body {
     background-attachment: fixed; /* Keeps the background fixed when scrolling */
     margin: 0; /* Removes default margin */
     height: 100vh; /* Makes sure the background fills the entire viewport */
-    display: flex; /* Use flexbox to center the content */
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
     color: white; /* Text color */
@@ -17,26 +16,44 @@ body {
   }  
   /* Styling for the main heading */
   h1 {
-        text-align: center;
-        font-weight: bold;
-        position: relative;
-        top: 0px;
-        font-size: 40px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: absolute;            /* Needed to use top/left */
+    left: 50%;                     /* Start centering from the middle */
+    top: -10px;                     /* Move down from the top */
+    transform: translateX(-50%);   /* Shift back by 50% of its own width to center */
+  
+    text-align: center;
+    font-weight: bold;
+    font-size: 3vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Use px here, not % */
+    font-family: Georgia, serif;  /* Added fallback + fixed missing semicolon */
   }
+  
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 12.5% 12.5% 25% rgba(0, 0, 0, 0.5); /* 2px 2px 4px */
+    font-family: Georgia 
+  }
+  p {
+    font-weight: bold;
+    text-shadow: 12.5% 12.5% 25% rgba(0, 0, 0, 0.5); /* 2px 2px 4px */
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif; /* Default system font */ /* Missing semicolon fixed */
+    font-size: 1.5vw;
+  }
+  
   .nav-container {
     display: flex;
-    justify-content: center; /* Centers only the nav links */
-    gap: 15px; /* Adds spacing between links */
+    gap: 20px; /* Adds spacing between links */
     position: absolute;
     top: 40px;   /* Distance from the top */
-    right: 40px; /* Distance from the right */
+    right: 30px; /* Distance from the right */
     text-decoration: none;
-    color: white; /* or any color you like */  
+    color: white; /* or any color you like */ 
 }
 .nav-container a {
     text-decoration: none; /* Removes underline */
     color: white; /* Makes the text white */
+    font-size: 2vw;
 }
 .nav-container a:hover {
     opacity: 0.8; /* Slight fade effect on hover */
@@ -48,19 +65,20 @@ ul {
 }
 .tagline {
     color: white; /* Example style */
-    font-size: 20px;
     font-weight: bold;
     margin-left: 20px; /* Distance from the right */
     position: relative; /* Enable positioning */
     top: 300px;
+    font-size: 1.5vw;
 }
 .logo-image {
         position: absolute;  /* Sticks to the screen even when scrolling */
-        top: 20px;        /* Distance from the top */
+        top: 35px;        /* Distance from the top */
         left: 0px;       /* Distance from the left */
-        width: 300px;     /* Adjust size as needed */
         height: auto;
         margin-bottom: 20px; 
+        font-size: 1vw;
+        width: clamp(150px, 20vw, 300px);  /* Min 150px, ideal 20vw, max 300px */
 }
 .title-group {
     display: fixed;            /* Places the image and text side by side */
@@ -69,8 +87,8 @@ ul {
 }
 .arrangement-title {
     text-align: center;
-    font-size: 18px;
     margin-bottom: 20px; /* Adds space between the text and the PDF */
+    font-size: 1.5vw;
 }
 /* Styling for the content box */
 /* Content Box (Bottom Half of Screen) */
@@ -92,6 +110,8 @@ ul {
 .half-page-image {
     height: 50vh;  /* half the viewport height */
     overflow: hidden;
+    border: 7px solid #4957b682;
+    margin-top: 30px; /* Adjust this value as needed */
   }
 .half-page-image img {
     width: 100%;
@@ -111,8 +131,9 @@ ul {
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
+    padding-top: 20px;
   }
 .fab {
     color: white;            /* Makes the icon white */
@@ -134,8 +155,124 @@ ul {
     border: none; /* Removes the default border */
     cursor: pointer; /* Changes the cursor to indicate it's clickable */
     transition: background-color 0.3s; /* Smooth transition for hover effect */
+    margin: 5px auto 0 auto;   /* Adjust the top margin to move closer to the top */
+    
 }
 #backButton:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
+.half-page-image2 {
+  height: 50vh;  /* half the viewport height */
+  overflow: hidden;
+}
+.half-page-image2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* makes the image fill the space without stretching */
+} 
+.boxed {
+  border: 2px solid white;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  width: fit-content;         /* Box shrinks to fit content */
+  margin: -30px auto 0 auto;   /* Adjust the top margin to move closer to the top */
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* Center the whole box on the page */
+.center-container {
+  text-align: center;
+  margin-top: 50px; /* Optional: space from top */
+}
+
+/* Ensuring that demo-wrapper takes the full viewport height */
+.demo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height for centering */
+  flex-direction: column; /* Arrange items in a column */
+  position: relative; /* Allow for absolute positioning of the back button */
+}
+
+/* Back button styling */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #0f0;
+  color: #000;
+}
+
+/* MP3 player body */
+.mp3-body {
+  background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
+  border: 8px solid #444;
+  border-radius: 20px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+}
+
+/* MP3 screen */
+.mp3-screen {
+  background: #000;
+  color: #0f0;
+  border: 4px inset #333;
+  border-radius: 10px;
+  padding: 15px;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 20px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mp3-controls {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.mp3-controls button {
+  background-color: #1e1e1e;
+  border: 2px solid #4caf50;
+  color: #4caf50;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.mp3-controls button:hover {
+  background-color: #4caf50;
+  color: #000;
+  transform: translateY(-2px) scale(1.05);
+}
+
+
 

@@ -1,3 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MP3 Player Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-wrapper">
+    <!-- Back Button at the top -->
+    <button class="back-btn" onclick="window.history.back()">← Back</button>
+
+    <div class="mp3-body">
+      <div class="mp3-screen">
+        <div id="song-title">Loading...</div>
+        <div id="time">0:00</div>
+      </div>
+      <div class="mp3-controls">
+        <!-- Previous Button -->
+        <button id="prev-btn" aria-label="Previous">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0f0" viewBox="0 0 24 24">
+            <path d="M6 19V5h2v14H6zm3-7l9 7V5l-9 7z"/>
+          </svg>
+        </button>
+      
+        <!-- Play/Pause Button -->
+        <button id="play-btn" aria-label="Play">
+          <span id="play-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0f0" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </span>
+        </button>
+      
+        <!-- Next Button -->
+        <button id="next-btn" aria-label="Next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0f0" viewBox="0 0 24 24">
+            <path d="M16 5v14h2V5h-2zm-2 7L5 5v14l9-7z"/>
+          </svg>
+        </button>
+      </div>   
+  </div>
+</body>
+</html>
+
+
 
 
 
