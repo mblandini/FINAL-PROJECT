@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MP3 Player Demo</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <h1>FILM SCORING CUES</h1>
   <div class="demo-wrapper">
-    <!-- Back Button at the top -->
-    <button class="back-btn" onclick="window.history.back()">← Back</button>
-
     <div class="mp3-body">
       <div class="mp3-screen">
         <div id="song-title">Loading...</div>
@@ -23,16 +22,13 @@
             <path d="M6 19V5h2v14H6zm3-7l9 7V5l-9 7z"/>
           </svg>
         </button>
-      
         <!-- Play/Pause Button -->
         <button id="play-btn" aria-label="Play">
-          <span id="play-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0f0" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
-          </span>
+          <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0f0" viewBox="0 0 24 24">
+            <path id="play-icon-path" d="M8 5v14l11-7z"/>
+            <path id="pause-icon-path" d="M6 5h2v14H6zm4 0h2v14h-2z" style="display:none;"/>
+          </svg>
         </button>
-      
         <!-- Next Button -->
         <button id="next-btn" aria-label="Next">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0f0" viewBox="0 0 24 24">
@@ -40,9 +36,12 @@
           </svg>
         </button>
       </div>   
+      <audio id="audio" preload="auto"></audio>
+    </div>
   </div>
 </body>
 </html>
+
 
 
 
