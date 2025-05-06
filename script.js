@@ -25,7 +25,6 @@ const timeDisplay = document.getElementById("time");
 const playlist = [
   { title: "Escape The Dragon", src: "assets/Escape The Dragon.wav" },
   { title: "Shrek's Home", src: "assets/Shrek's Home.wav"},
-  { title: "The Little Match Girl", src: "assets/The Little Match Girl (Audio Demo).wav"},
 ];
 
 let currentSong = 0;
